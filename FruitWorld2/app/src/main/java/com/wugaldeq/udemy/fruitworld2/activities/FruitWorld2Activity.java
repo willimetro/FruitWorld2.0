@@ -1,7 +1,9 @@
-package com.wugaldeq.udemy.fruitworld2;
+package com.wugaldeq.udemy.fruitworld2.activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.wugaldeq.udemy.fruitworld2.R;
 
 public class FruitWorld2Activity extends AppCompatActivity {
 
