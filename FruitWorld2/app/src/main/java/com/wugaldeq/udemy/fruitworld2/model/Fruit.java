@@ -1,6 +1,7 @@
 package com.wugaldeq.udemy.fruitworld2.model;
 
 /**
+ * Clase que representa una fruta que se mostrará en el listado de la aplicación
  * Created by wugaldeq on 31-01-2018.
  */
 
@@ -11,8 +12,8 @@ public class Fruit {
     private int imgIconFruit;
     private int quantity;
 
-    public final int QUANTITY_LIMIT = 10;
-    public final int QUANTITY_RESET = 0;
+    public static final int QUANTITY_LIMIT = 10;
+    public static final int QUANTITY_RESET = 0;
 
     public Fruit(String nameFruit, String descriptionFruit, int imgBackGroundFruit, int imgIconFruit, int quantity) {
         this.nameFruit = nameFruit;
@@ -60,5 +61,15 @@ public class Fruit {
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
+    }
+
+    public void setQuantityWithLimit(int quantity) {
+        if(this.quantity < QUANTITY_LIMIT){
+            this.quantity = this.quantity + quantity;
+        }
+    }
+
+    public void resetQuantity(){
+        this.quantity = QUANTITY_RESET;
     }
 }
