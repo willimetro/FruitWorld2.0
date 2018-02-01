@@ -6,10 +6,11 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
+
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
+
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -61,7 +62,7 @@ public class FruitWorld2Adapter extends RecyclerView.Adapter<FruitWorld2Adapter.
         private TextView txViewDescriptionFruit;
         private TextView txViewQuantityFruit;
 
-        public ViewHolder(View itemView) {
+        private ViewHolder(View itemView) {
             super(itemView);
             imgViewFruitBackGround = itemView.findViewById(R.id.imgViewFruitBackGround);
             txViewNameFruit = itemView.findViewById(R.id.txViewNameFruit);
@@ -70,7 +71,7 @@ public class FruitWorld2Adapter extends RecyclerView.Adapter<FruitWorld2Adapter.
             itemView.setOnCreateContextMenuListener(this);
         }
 
-        public void bind(final Fruit fruit, final OnItemClickListener onItemClickListener){
+        private void bind(final Fruit fruit, final OnItemClickListener onItemClickListener){
             txViewNameFruit.setText(fruit.getNameFruit());
             txViewDescriptionFruit.setText(fruit.getDescriptionFruit());
             txViewQuantityFruit.setText(String.valueOf(fruit.getQuantity()));

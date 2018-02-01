@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">FruitWorld2</string>
+    <string name="item_title_add_fruit">Add</string>
 </resources>
