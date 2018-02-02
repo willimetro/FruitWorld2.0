@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/deleteFruit"
+        android:title="@string/item_delete_fruit"/>
+
+    <item
+        android:id="@+id/resetQuantityFruit"
+        android:title="@string/item_reset_quantity_fruit"/>
+</menu>

@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
 
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -99,7 +100,16 @@ public class FruitWorld2Adapter extends RecyclerView.Adapter<FruitWorld2Adapter.
 
         @Override
         public void onCreateContextMenu(ContextMenu contextMenu, View view, ContextMenu.ContextMenuInfo contextMenuInfo) {
+            Fruit fruitSelected = fruits.get(getAdapterPosition());
+            contextMenu.setHeaderTitle(fruitSelected.getNameFruit());
+            contextMenu.setHeaderIcon(fruitSelected.getImgIconFruit());
 
+            MenuInflater menuInflater = activity.getMenuInflater();
+            menuInflater.inflate(R.menu.context_menu_item_fruit,contextMenu);
+            int i = 0;
+            while (i < contextMenu.size()){
+                contextMenu.getItem(i).setOnMenuItemClickListener(this);
+            }
         }
     }
 
