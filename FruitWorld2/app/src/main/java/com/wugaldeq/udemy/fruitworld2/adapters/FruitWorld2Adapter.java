@@ -95,7 +95,25 @@ public class FruitWorld2Adapter extends RecyclerView.Adapter<FruitWorld2Adapter.
 
         @Override
         public boolean onMenuItemClick(MenuItem menuItem) {
-            return false;
+            boolean result;
+
+            switch (menuItem.getItemId()) {
+                case R.id.deleteFruit:
+                    fruits.remove(getAdapterPosition());
+                    notifyItemRemoved(getAdapterPosition());
+                    result = true;
+                    break;
+                case R.id.resetQuantityFruit:
+                    Fruit fruit = fruits.get(getAdapterPosition());
+                    fruit.resetQuantity();
+                    fruits.set(getAdapterPosition(),fruit);
+                    notifyItemChanged(getAdapterPosition());
+                    result = true;
+                    break;
+                default:
+                    result = false;
+            }
+            return result;
         }
 
         @Override
@@ -109,6 +127,7 @@ public class FruitWorld2Adapter extends RecyclerView.Adapter<FruitWorld2Adapter.
             int i = 0;
             while (i < contextMenu.size()){
                 contextMenu.getItem(i).setOnMenuItemClickListener(this);
+                i++;
             }
         }
     }
